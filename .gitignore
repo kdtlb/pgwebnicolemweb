@@ -1,0 +1,16 @@
+# Respaldos / archivos comprimidos
+*.zip
+
+# Archivos del sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Editores / IDE
+.vscode/
+.idea/
+*.swp
+*~
