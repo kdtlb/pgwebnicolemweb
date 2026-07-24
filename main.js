@@ -52,6 +52,51 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => el.classList.add('in'));
   }
 
+  /* --- Carruseles de imágenes (si existen) --- */
+  document.querySelectorAll('[data-carousel]').forEach((car) => {
+    const track  = car.querySelector('.car-track');
+    const slides = Array.from(car.querySelectorAll('.car-slide'));
+    if (!track || slides.length === 0) return;
+
+    const prev = car.querySelector('.car-btn.prev');
+    const next = car.querySelector('.car-btn.next');
+    const dotsWrap = car.querySelector('.car-dots');
+    let index = 0;
+    let timer = null;
+
+    // Puntos de navegación
+    const dots = slides.map((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Ir a la imagen ' + (i + 1));
+      b.addEventListener('click', () => { go(i); restart(); });
+      dotsWrap && dotsWrap.appendChild(b);
+      return b;
+    });
+
+    const go = (i) => {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+      dots.forEach((d, di) => d.classList.toggle('active', di === index));
+    };
+
+    prev && prev.addEventListener('click', () => { go(index - 1); restart(); });
+    next && next.addEventListener('click', () => { go(index + 1); restart(); });
+
+    const start = () => {
+      if (slides.length < 2) return;
+      timer = setInterval(() => go(index + 1), 6000);
+    };
+    const restart = () => { clearInterval(timer); start(); };
+
+    // Pausa al pasar el cursor
+    car.addEventListener('mouseenter', () => clearInterval(timer));
+    car.addEventListener('mouseleave', restart);
+
+    go(0);
+    start();
+  });
+
   /* --- Conteo animado de estadísticas (si existen) --- */
   const counters = document.querySelectorAll('[data-count]');
   if (counters.length && 'IntersectionObserver' in window) {

@@ -1,6 +1,10 @@
 # Respaldos / archivos comprimidos
 *.zip
 
+# Documentos de trabajo internos (guías del cliente, correcciones)
+*.docx
+*.doc
+
 # Archivos del sistema operativo
 Thumbs.db
 ehthumbs.db
