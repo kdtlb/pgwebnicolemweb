@@ -1,4 +1,52 @@
 /* VENDIMIA · Casa de Eventos — interacciones compartidas */
+
+/* =========================================================
+   TEMPORAL · Selector de tono de verde (vista previa cliente)
+   Para quitarlo: eliminar este bloque + el bloque en styles.css
+   ========================================================= */
+(function(){
+  const PALETTES = [
+    { id:'',   name:'Verde actual', color:'#1e4d39' },
+    { id:'p1', name:'Olivo oscuro', color:'#272b00' },
+    { id:'p2', name:'Olivo',        color:'#54582f' },
+    { id:'p3', name:'Salvia',       color:'#86895d' }
+  ];
+  const saved = localStorage.getItem('nm-palette') || '';
+  if (saved) document.documentElement.setAttribute('data-palette', saved);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.createElement('div');
+    panel.className = 'palette-switch';
+    const title = document.createElement('span');
+    title.className = 'ps-title';
+    title.textContent = 'Tono de verde · vista previa';
+    const row = document.createElement('div');
+    row.className = 'ps-row';
+
+    PALETTES.forEach(p => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'ps-dot';
+      b.style.background = p.color;
+      b.title = p.name;
+      b.setAttribute('aria-label', 'Tono ' + p.name);
+      if ((saved || '') === p.id) b.classList.add('active');
+      b.addEventListener('click', () => {
+        if (p.id) document.documentElement.setAttribute('data-palette', p.id);
+        else document.documentElement.removeAttribute('data-palette');
+        localStorage.setItem('nm-palette', p.id);
+        row.querySelectorAll('.ps-dot').forEach(d => d.classList.remove('active'));
+        b.classList.add('active');
+      });
+      row.appendChild(b);
+    });
+
+    panel.appendChild(title);
+    panel.appendChild(row);
+    document.body.appendChild(panel);
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Fondo del nav al hacer scroll --- */
