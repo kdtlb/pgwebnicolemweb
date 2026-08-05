@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto · Nicole Márquez Organización de Eventos · Tarija</title>
-<meta name="description" content="Conversemos sobre tu próximo evento. Contacta a Nicole Márquez en Tarija: WhatsApp, correo y formulario.">
+<title data-i18n="co_title">Contacto · Nicole Márquez Organización de Eventos · Tarija</title>
+<meta name="description" data-i18n-content="co_meta" content="Conversemos sobre tu próximo evento. Contacta a Nicole Márquez en Tarija: WhatsApp, correo y formulario.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,13 +15,19 @@
     <img src="logo.png" alt="Nicole Márquez - Organización de Eventos" />
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="organizadora.html">La Organizadora</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="areas.html">Áreas de Trabajo</a></li>
-    <li><a href="contacto.html" class="active">Contacto</a></li>
+    <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+    <li><a href="organizadora.html" data-i18n="nav_org">La Organizadora</a></li>
+    <li><a href="eventos.html" data-i18n="nav_events">Eventos</a></li>
+    <li><a href="areas.html" data-i18n="nav_areas">Áreas de Trabajo</a></li>
+    <li><a href="contacto.html" class="active" data-i18n="nav_contact">Contacto</a></li>
   </ul>
-  <button class="burger" aria-label="Abrir menú">
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="es" lang="es">ES</button>
+    <button type="button" data-lang="en" lang="en">EN</button>
+    <button type="button" data-lang="fr" lang="fr">FR</button>
+    <button type="button" data-lang="pt" lang="pt">PT</button>
+  </div>
+  <button class="burger" aria-label="Abrir menú" data-i18n-aria="aria_menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -29,9 +35,9 @@
 <!-- HERO -->
 <header class="page-hero">
   <div class="wrap">
-    <span class="kicker kicker--light">Hablemos de tu celebración</span>
-    <h1>Conversemos sobre tu<br>próximo <em>evento</em></h1>
-    <p>Cada gran celebración comienza con una idea. Queremos conocer la tuya, escuchar lo que imaginas y ayudarte a convertirla en una experiencia única, elegante y memorable.</p>
+    <span class="kicker kicker--light" data-i18n="co_hero_kicker">Hablemos de tu celebración</span>
+    <h1 data-i18n="co_hero_h1">Conversemos sobre tu<br>próximo <em>evento</em></h1>
+    <p data-i18n="co_hero_p">Cada gran celebración comienza con una idea. Queremos conocer la tuya, escuchar lo que imaginas y ayudarte a convertirla en una experiencia única, elegante y memorable.</p>
   </div>
 </header>
 
@@ -42,26 +48,26 @@
 
       <!-- Datos -->
       <div class="contact-info reveal">
-        <span class="kicker">Contacto directo</span>
-        <h2>Estamos para ti</h2>
-        <p>Cuéntanos qué tipo de evento estás planificando, la fecha aproximada, el lugar y aquello que te gustaría hacer realidad. Nos pondremos en contacto contigo para brindarte una atención personalizada.</p>
+        <span class="kicker" data-i18n="co_info_kicker">Contacto directo</span>
+        <h2 data-i18n="co_info_h2">Estamos para ti</h2>
+        <p data-i18n="co_info_p">Cuéntanos qué tipo de evento estás planificando, la fecha aproximada, el lugar y aquello que te gustaría hacer realidad. Nos pondremos en contacto contigo para brindarte una atención personalizada.</p>
 
         <div class="contact-list">
           <div class="contact-item">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
-            <div class="cd"><span>Teléfono / WhatsApp</span><a href="https://wa.me/59167393012" target="_blank" rel="noopener">+591 673 93 012</a></div>
+            <div class="cd"><span data-i18n="co_phone_label">Teléfono / WhatsApp</span><a href="https://wa.me/59167393012" target="_blank" rel="noopener">+591 673 93 012</a></div>
           </div>
           <div class="contact-item">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-            <div class="cd"><span>Correo electrónico</span><a href="mailto:ndmarquezm@gmail.com">ndmarquezm@gmail.com</a></div>
+            <div class="cd"><span data-i18n="co_email_label">Correo electrónico</span><a href="mailto:ndmarquezm@gmail.com">ndmarquezm@gmail.com</a></div>
           </div>
           <div class="contact-item">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-            <div class="cd"><span>Ubicación</span><p>Av. La Paz – Zona Salamanca · Tarija, Bolivia</p></div>
+            <div class="cd"><span data-i18n="co_loc_label">Ubicación</span><p>Av. La Paz – Zona Salamanca · Tarija, Bolivia</p></div>
           </div>
         </div>
 
-        <span class="kicker" style="display:block;margin-top:2.4rem">Síguenos</span>
+        <span class="kicker" style="display:block;margin-top:2.4rem" data-i18n="co_follow">Síguenos</span>
         <div class="socials">
           <a href="https://www.instagram.com/nicolem.wp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/profile.php?id=100064047130136" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V12H8v3h2.5v6h3v-6H16l.5-3h-3v-2.2c0-.5.4-.8.9-.8z"/></svg></a>
@@ -72,51 +78,51 @@
 
       <!-- Formulario -->
       <div class="contact-card reveal d1">
-        <h3>Solicita una reunión</h3>
-        <p class="sub">Completa el formulario y te contactaremos para diseñar tu evento. Tu mensaje llegará directamente a nuestro correo.</p>
+        <h3 data-i18n="co_form_h3">Solicita una reunión</h3>
+        <p class="sub" data-i18n="co_form_sub">Completa el formulario y te contactaremos para diseñar tu evento. Tu mensaje llegará directamente a nuestro correo.</p>
         <div class="field">
-          <label for="nombre">Nombre completo</label>
-          <input id="nombre" type="text" placeholder="Tu nombre">
+          <label for="nombre" data-i18n="co_name_label">Nombre completo</label>
+          <input id="nombre" type="text" placeholder="Tu nombre" data-i18n-ph="co_name_ph">
         </div>
         <div class="field">
-          <label for="correo">Correo electrónico</label>
-          <input id="correo" type="email" placeholder="tucorreo@ejemplo.com">
+          <label for="correo" data-i18n="co_email_label">Correo electrónico</label>
+          <input id="correo" type="email" placeholder="tucorreo@ejemplo.com" data-i18n-ph="co_email_ph">
         </div>
         <div class="field">
-          <label for="tipo">Tipo de evento</label>
+          <label for="tipo" data-i18n="co_type_label">Tipo de evento</label>
           <select id="tipo">
-            <option>Boda</option>
-            <option>Evento social</option>
-            <option>Evento corporativo</option>
-            <option>Evento destino</option>
-            <option>Otro</option>
+            <option data-i18n="opt_boda">Boda</option>
+            <option data-i18n="opt_social">Evento social</option>
+            <option data-i18n="opt_corp">Evento corporativo</option>
+            <option data-i18n="opt_dest">Evento destino</option>
+            <option data-i18n="opt_other">Otro</option>
           </select>
         </div>
         <div class="field">
-          <label for="mensaje">Cuéntanos más</label>
-          <textarea id="mensaje" placeholder="Fecha aproximada, lugar, número de invitados y lo que imaginas..."></textarea>
+          <label for="mensaje" data-i18n="co_msg_label">Cuéntanos más</label>
+          <textarea id="mensaje" placeholder="Fecha aproximada, lugar, número de invitados y lo que imaginas..." data-i18n-ph="co_msg_ph"></textarea>
         </div>
-        <button class="btn btn-gold" id="enviar" type="button">Solicitar una reunión</button>
-        <p class="form-note">Al enviar, se abrirá tu correo con el mensaje listo para confirmar.</p>
+        <button class="btn btn-gold" id="enviar" type="button" data-i18n="co_submit">Solicitar una reunión</button>
+        <p class="form-note" data-i18n="co_form_note">Al enviar, se abrirá tu correo con el mensaje listo para confirmar.</p>
       </div>
 
     </div>
 
     <!-- Horarios -->
     <div class="hours-bar reveal">
-      <div><span>Lunes a Viernes</span><b>09:00 — 12:30</b></div>
-      <div><span>Sábados</span><b>09:00 — 12:30</b></div>
-      <div><span>Reuniones</span><b>Previa cita</b></div>
+      <div><span data-i18n="co_hours1_label">Lunes a Viernes</span><b>09:00 — 12:30</b></div>
+      <div><span data-i18n="co_hours2_label">Sábados</span><b>09:00 — 12:30</b></div>
+      <div><span data-i18n="co_hours3_label">Reuniones</span><b data-i18n="co_hours3_val">Previa cita</b></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="section cta">
-  <span class="kicker reveal">Tu evento empieza aquí</span>
-  <h2 class="reveal d1">Permítenos acompañarte</h2>
-  <p class="reveal d1">Con experiencia, creatividad y atención personalizada, juntos podemos transformar tu idea en una celebración verdaderamente inolvidable.</p>
-  <a href="https://wa.me/59167393012" target="_blank" rel="noopener" class="btn btn-dark reveal d1">Escribir por WhatsApp</a>
+  <span class="kicker reveal" data-i18n="co_cta_kicker">Tu evento empieza aquí</span>
+  <h2 class="reveal d1" data-i18n="co_cta_h2">Permítenos acompañarte</h2>
+  <p class="reveal d1" data-i18n="co_cta_p">Con experiencia, creatividad y atención personalizada, juntos podemos transformar tu idea en una celebración verdaderamente inolvidable.</p>
+  <a href="https://wa.me/59167393012" target="_blank" rel="noopener" class="btn btn-dark reveal d1" data-i18n="co_cta_btn">Escribir por WhatsApp</a>
 </section>
 
 <!-- FOOTER -->
@@ -125,7 +131,7 @@
     <div>
       <img src="logo.png" alt="Nicole Márquez - Organización de Eventos" width="200"/>
       <small class="tag">Tarija · Bolivia</small>
-      <p>Diseñamos y producimos experiencias únicas, elegantes y cuidadosamente planificadas: bodas, eventos sociales y corporativos en Tarija y otros destinos.</p>
+      <p data-i18n="foot_desc">Diseñamos y producimos experiencias únicas, elegantes y cuidadosamente planificadas: bodas, eventos sociales y corporativos en Tarija y otros destinos.</p>
       <div class="socials">
         <a href="https://www.instagram.com/nicolem.wp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.facebook.com/profile.php?id=100064047130136" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V12H8v3h2.5v6h3v-6H16l.5-3h-3v-2.2c0-.5.4-.8.9-.8z"/></svg></a>
@@ -134,17 +140,17 @@
       </div>
     </div>
     <div>
-      <h5>Navegación</h5>
+      <h5 data-i18n="foot_nav_title">Navegación</h5>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="organizadora.html">La Organizadora</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="areas.html">Áreas de Trabajo</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="organizadora.html" data-i18n="nav_org">La Organizadora</a></li>
+        <li><a href="eventos.html" data-i18n="nav_events">Eventos</a></li>
+        <li><a href="areas.html" data-i18n="nav_areas">Áreas de Trabajo</a></li>
+        <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contacto</h5>
+      <h5 data-i18n="foot_contact_title">Contacto</h5>
       <ul>
         <li>Av. La Paz · Zona Salamanca, Tarija</li>
         <li><a href="tel:+59167393012">+591 673 93 012</a></li>
@@ -153,22 +159,27 @@
     </div>
   </div>
   <div class="footer-base">
-    <span>© 2026 Nicole Márquez · Organización de Eventos. Tarija, Bolivia.</span>
-    <span>Hecho por ProgredI.</span>
+    <span data-i18n="foot_copyright">© 2026 Nicole Márquez · Organización de Eventos. Tarija, Bolivia.</span>
+    <span data-i18n="foot_made">Hecho por BuckdI.</span>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 <script>
-  // Compone un correo con los datos del formulario (sin backend)
+  // Compone un correo con los datos del formulario (sin backend).
+  // Las etiquetas se traducen según el idioma activo (window.NM_I18N).
   document.getElementById('enviar').addEventListener('click', () => {
+    const tr = (window.NM_I18N && window.NM_I18N.t) ? window.NM_I18N.t : (k => k);
     const n = document.getElementById('nombre').value.trim();
     const c = document.getElementById('correo').value.trim();
     const t = document.getElementById('tipo').value;
     const m = document.getElementById('mensaje').value.trim();
-    const cuerpo = `Nombre: ${n}%0D%0ACorreo: ${c}%0D%0ATipo de evento: ${t}%0D%0A%0D%0A${m}`;
+    const cuerpo =
+      `${tr('mail_name')}: ${n}%0D%0A${tr('mail_email')}: ${c}%0D%0A${tr('mail_type')}: ${t}%0D%0A%0D%0A${m}`;
+    const asunto = `${tr('mail_subject')} - ${encodeURIComponent(n || tr('mail_default'))}`;
     window.location.href =
-      `mailto:ndmarquezm@gmail.com?subject=Solicitud de reunión - ${encodeURIComponent(n||'Nuevo contacto')}&body=${cuerpo}`;
+      `mailto:ndmarquezm@gmail.com?subject=${asunto}&body=${cuerpo}`;
   });
 </script>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Organizadora y su Equipo · Nicole Márquez Tarija</title>
-<meta name="description" content="Nicole Márquez, organizadora de eventos en Tarija, y el equipo que hace posible cada celebración.">
+<title data-i18n="org_title">La Organizadora y su Equipo · Nicole Márquez Tarija</title>
+<meta name="description" data-i18n-content="org_meta" content="Nicole Márquez, organizadora de eventos en Tarija, y el equipo que hace posible cada celebración.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,13 +15,19 @@
     <img src="logo.png" alt="Nicole Márquez - Organización de Eventos" />
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="organizadora.html" class="active">La Organizadora</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="areas.html">Áreas de Trabajo</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+    <li><a href="organizadora.html" class="active" data-i18n="nav_org">La Organizadora</a></li>
+    <li><a href="eventos.html" data-i18n="nav_events">Eventos</a></li>
+    <li><a href="areas.html" data-i18n="nav_areas">Áreas de Trabajo</a></li>
+    <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
   </ul>
-  <button class="burger" aria-label="Abrir menú">
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="es" lang="es">ES</button>
+    <button type="button" data-lang="en" lang="en">EN</button>
+    <button type="button" data-lang="fr" lang="fr">FR</button>
+    <button type="button" data-lang="pt" lang="pt">PT</button>
+  </div>
+  <button class="burger" aria-label="Abrir menú" data-i18n-aria="aria_menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -29,9 +35,9 @@
 <!-- HERO -->
 <header class="page-hero">
   <div class="wrap">
-    <span class="kicker kicker--light">Detrás de cada celebración</span>
-    <h1>La Organizadora<br>y su <em>Equipo</em></h1>
-    <p>La visión, la mano firme y el equipo humano que sostienen cada evento de Nicole Márquez.</p>
+    <span class="kicker kicker--light" data-i18n="org_hero_kicker">Detrás de cada celebración</span>
+    <h1 data-i18n="org_hero_h1">La Organizadora<br>y su <em>Equipo</em></h1>
+    <p data-i18n="org_hero_p">La visión, la mano firme y el equipo humano que sostienen cada evento de Nicole Márquez.</p>
   </div>
 </header>
 
@@ -41,12 +47,12 @@
     <div class="org-grid">
       <div class="org-portrait reveal"></div>
       <div class="org-body reveal d1">
-        <span class="kicker">Fundadora &amp; Directora</span>
+        <span class="kicker" data-i18n="org_role_kicker">Fundadora &amp; Directora</span>
         <h2>Nicole Márquez</h2>
-        <p class="role">Organizadora de Eventos · Tarija</p>
-        <p>Nicole Márquez es una joven empresaria tarijeña especializada en la organización y coordinación de eventos. Su formación reúne conocimientos en gastronomía, decoración de interiores y una especialización en Organización y Coordinación de Eventos, complementados con cursos internacionales del Event Management Center.</p>
-        <p>Con siete años de experiencia, ha consolidado una trayectoria destacada en la organización de bodas y eventos, especialmente en la campiña tarijeña y en otros escenarios llenos de encanto en Bolivia.</p>
-        <p>Su trabajo se distingue por la atención personalizada, el cuidado de cada detalle y la capacidad de anticipar y resolver cada desafío con serenidad.</p>
+        <p class="role" data-i18n="org_role">Organizadora de Eventos · Tarija</p>
+        <p data-i18n="org_p1">Nicole Márquez es una joven empresaria tarijeña especializada en la organización y coordinación de eventos. Su formación reúne conocimientos en gastronomía, decoración de interiores y una especialización en Organización y Coordinación de Eventos, complementados con cursos internacionales del Event Management Center.</p>
+        <p data-i18n="org_p2">Con siete años de experiencia, ha consolidado una trayectoria destacada en la organización de bodas y eventos, especialmente en la campiña tarijeña y en otros escenarios llenos de encanto en Bolivia.</p>
+        <p data-i18n="org_p3">Su trabajo se distingue por la atención personalizada, el cuidado de cada detalle y la capacidad de anticipar y resolver cada desafío con serenidad.</p>
         <p class="sign">Nicole Márquez</p>
       </div>
     </div>
@@ -55,21 +61,21 @@
 
 <!-- FILOSOFÍA / CITA -->
 <section class="section pull">
-  <blockquote class="reveal">Un gran evento no solo se mide por lo que sale bien, sino también por todo aquello que se logró prever y solucionar para que los invitados simplemente disfruten.</blockquote>
-  <cite class="reveal d1">— El sello de Nicole Márquez</cite>
+  <blockquote class="reveal" data-i18n="org_quote">Un gran evento no solo se mide por lo que sale bien, sino también por todo aquello que se logró prever y solucionar para que los invitados simplemente disfruten.</blockquote>
+  <cite class="reveal d1" data-i18n="org_cite">— El sello de Nicole Márquez</cite>
 </section>
 
 <!-- ESTADÍSTICAS -->
 <section class="section" style="background:var(--cream)">
   <div class="wrap center">
-    <span class="kicker reveal">Una trayectoria que celebra</span>
-    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)">Años de oficio, cada momento fluye con elegancia</h2>
+    <span class="kicker reveal" data-i18n="org_stats_kicker">Una trayectoria que celebra</span>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)" data-i18n="org_stats_h2">Años de oficio, cada momento fluye con elegancia</h2>
     <div class="ornament reveal d1"><span></span><i></i><span></span></div>
     <div class="stats">
-      <div class="stat reveal d1"><b data-count="7" data-suffix="+">0</b><span>Años de experiencia</span></div>
-      <div class="stat reveal d2"><b data-count="100" data-suffix="%">0</b><span>Atención personalizada</span></div>
-      <div class="stat reveal d3"><b>Tarija</b><span>y otros destinos</span></div>
-      <div class="stat reveal d4"><b data-count="100" data-suffix="%">0</b><span>Cuidado en cada detalle</span></div>
+      <div class="stat reveal d1"><b data-count="7" data-suffix="+">0</b><span data-i18n="org_stat1">Años de experiencia</span></div>
+      <div class="stat reveal d2"><b data-count="100" data-suffix="%">0</b><span data-i18n="org_stat2">Atención personalizada</span></div>
+      <div class="stat reveal d3"><b>Tarija</b><span data-i18n="org_stat3">y otros destinos</span></div>
+      <div class="stat reveal d4"><b data-count="100" data-suffix="%">0</b><span data-i18n="org_stat4">Cuidado en cada detalle</span></div>
     </div>
   </div>
 </section>
@@ -77,8 +83,8 @@
 <!-- EQUIPO -->
 <section class="section">
   <div class="wrap center">
-    <span class="kicker reveal">La organizadora y su equipo</span>
-    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)">Nuestro equipo base</h2>
+    <span class="kicker reveal" data-i18n="org_team_kicker">La organizadora y su equipo</span>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)" data-i18n="org_team_h2">Nuestro equipo base</h2>
     <div class="ornament reveal d1"><span></span><i></i><span></span></div>
   </div>
   <div class="wrap">
@@ -86,29 +92,29 @@
       <div class="member reveal d1">
         <div class="avatar">J</div>
         <h4>Jimena Rejas</h4>
-        <span>Responsable de atención y logística</span>
+        <span data-i18n="member1_role">Responsable de atención y logística</span>
       </div>
       <div class="member reveal d2">
         <div class="avatar">S</div>
         <h4>Sebastián Bazán</h4>
-        <span>Community Manager</span>
+        <span data-i18n="member2_role">Community Manager</span>
       </div>
       <div class="member reveal d3">
         <div class="avatar">W</div>
         <h4>Waldo Cossío T.</h4>
-        <span>Lacayo de la jefa</span>
+        <span data-i18n="member3_role">Apoyo en planificación y coordinación logística</span>
       </div>
     </div>
-    <p class="team-note reveal d1">Además, para cada evento conformamos un equipo de servicio cuidadosamente seleccionado, con experiencia en atención de celebraciones, criterio profesional y la cordialidad necesaria para brindar una experiencia de calidad tanto a nuestros clientes como a sus invitados.</p>
+    <p class="team-note reveal d1" data-i18n="org_team_note">Además, para cada evento conformamos un equipo de servicio cuidadosamente seleccionado, con experiencia en atención de celebraciones, criterio profesional y la cordialidad necesaria para brindar una experiencia de calidad tanto a nuestros clientes como a sus invitados.</p>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="section cta">
-  <span class="kicker reveal">Hablemos de tu evento</span>
-  <h2 class="reveal d1">¿Tienes una celebración en mente?</h2>
-  <p class="reveal d1">Nicole y su equipo estarán encantados de escuchar tu idea y convertirla en una experiencia inolvidable.</p>
-  <a href="contacto.html" class="btn btn-dark reveal d1">Conversemos sobre tu evento</a>
+  <span class="kicker reveal" data-i18n="org_cta_kicker">Hablemos de tu evento</span>
+  <h2 class="reveal d1" data-i18n="org_cta_h2">¿Tienes una celebración en mente?</h2>
+  <p class="reveal d1" data-i18n="org_cta_p">Nicole y su equipo estarán encantados de escuchar tu idea y convertirla en una experiencia inolvidable.</p>
+  <a href="contacto.html" class="btn btn-dark reveal d1" data-i18n="cta_talk_btn">Conversemos sobre tu evento</a>
 </section>
 
 <!-- FOOTER -->
@@ -117,7 +123,7 @@
     <div>
       <img src="logo.png" alt="Nicole Márquez - Organización de Eventos" width="200"/>
       <small class="tag">Tarija · Bolivia</small>
-      <p>Diseñamos y producimos experiencias únicas, elegantes y cuidadosamente planificadas: bodas, eventos sociales y corporativos en Tarija y otros destinos.</p>
+      <p data-i18n="foot_desc">Diseñamos y producimos experiencias únicas, elegantes y cuidadosamente planificadas: bodas, eventos sociales y corporativos en Tarija y otros destinos.</p>
       <div class="socials">
         <a href="https://www.instagram.com/nicolem.wp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.facebook.com/profile.php?id=100064047130136" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V12H8v3h2.5v6h3v-6H16l.5-3h-3v-2.2c0-.5.4-.8.9-.8z"/></svg></a>
@@ -126,17 +132,17 @@
       </div>
     </div>
     <div>
-      <h5>Navegación</h5>
+      <h5 data-i18n="foot_nav_title">Navegación</h5>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="organizadora.html">La Organizadora</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="areas.html">Áreas de Trabajo</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="organizadora.html" data-i18n="nav_org">La Organizadora</a></li>
+        <li><a href="eventos.html" data-i18n="nav_events">Eventos</a></li>
+        <li><a href="areas.html" data-i18n="nav_areas">Áreas de Trabajo</a></li>
+        <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contacto</h5>
+      <h5 data-i18n="foot_contact_title">Contacto</h5>
       <ul>
         <li>Av. La Paz · Zona Salamanca, Tarija</li>
         <li><a href="tel:+59167393012">+591 673 93 012</a></li>
@@ -145,11 +151,12 @@
     </div>
   </div>
   <div class="footer-base">
-    <span>© 2026 Nicole Márquez · Organización de Eventos. Tarija, Bolivia.</span>
-    <span>Hecho por ProgredI.</span>
+    <span data-i18n="foot_copyright">© 2026 Nicole Márquez · Organización de Eventos. Tarija, Bolivia.</span>
+    <span data-i18n="foot_made">Hecho por BuckdI.</span>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

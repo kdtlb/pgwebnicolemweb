@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestros Eventos · Nicole Márquez Tarija</title>
-<meta name="description" content="Bodas, eventos corporativos y eventos sociales diseñados a medida en Tarija, Bolivia.">
+<title data-i18n="ev_title">Nuestros Eventos · Nicole Márquez Tarija</title>
+<meta name="description" data-i18n-content="ev_meta" content="Bodas, eventos corporativos y eventos sociales diseñados a medida en Tarija, Bolivia.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,13 +15,19 @@
     <img src="logo.png" alt="Nicole Márquez - Organización de Eventos" />
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="organizadora.html">La Organizadora</a></li>
-    <li><a href="eventos.html" class="active">Eventos</a></li>
-    <li><a href="areas.html">Áreas de Trabajo</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+    <li><a href="organizadora.html" data-i18n="nav_org">La Organizadora</a></li>
+    <li><a href="eventos.html" class="active" data-i18n="nav_events">Eventos</a></li>
+    <li><a href="areas.html" data-i18n="nav_areas">Áreas de Trabajo</a></li>
+    <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
   </ul>
-  <button class="burger" aria-label="Abrir menú">
+  <div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="es" lang="es">ES</button>
+    <button type="button" data-lang="en" lang="en">EN</button>
+    <button type="button" data-lang="fr" lang="fr">FR</button>
+    <button type="button" data-lang="pt" lang="pt">PT</button>
+  </div>
+  <button class="burger" aria-label="Abrir menú" data-i18n-aria="aria_menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -29,19 +35,19 @@
 <!-- HERO -->
 <header class="page-hero">
   <div class="wrap">
-    <span class="kicker kicker--light">Cada evento nace de una historia única</span>
-    <h1>Nuestros <em>Eventos</em></h1>
-    <p>Diseñamos bodas, celebraciones sociales y eventos corporativos personalizados, cuidando cada detalle con elegancia, sensibilidad y profesionalismo.</p>
+    <span class="kicker kicker--light" data-i18n="ev_hero_kicker">Cada evento nace de una historia única</span>
+    <h1 data-i18n="ev_hero_h1">Nuestros <em>Eventos</em></h1>
+    <p data-i18n="ev_hero_p">Diseñamos bodas, celebraciones sociales y eventos corporativos personalizados, cuidando cada detalle con elegancia, sensibilidad y profesionalismo.</p>
   </div>
 </header>
 
 <!-- INTRO -->
 <section class="section" style="padding-bottom:0">
   <div class="wrap center">
-    <span class="kicker reveal">Experiencias a medida</span>
-    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)">Más que organizar eventos, creamos recuerdos</h2>
+    <span class="kicker reveal" data-i18n="ev_intro_kicker">Experiencias a medida</span>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)" data-i18n="ev_intro_h2">Más que organizar eventos, creamos recuerdos</h2>
     <div class="ornament reveal d1"><span></span><i></i><span></span></div>
-    <p class="reveal d1" style="max-width:680px;margin:0 auto;color:var(--ink-soft)">Cada evento nace de una historia única. Más que organizar eventos, creamos experiencias memorables para disfrutar con tranquilidad, confianza y emoción.</p>
+    <p class="reveal d1" style="max-width:680px;margin:0 auto;color:var(--ink-soft)" data-i18n="ev_intro_p">Cada evento nace de una historia única. Más que organizar eventos, creamos experiencias memorables para disfrutar con tranquilidad, confianza y emoción.</p>
   </div>
 </section>
 
@@ -51,9 +57,9 @@
   <!-- BODAS -->
   <div class="ev-cat">
     <div class="ev-cat-head reveal">
-      <span class="kicker">01 · Bodas</span>
-      <h3>Bodas</h3>
-      <p>Creamos bodas únicas, elegantes y profundamente personales. Acompañamos a cada pareja desde la primera idea hasta el gran día, cuidando la planificación, el diseño, los proveedores, la logística y cada detalle de la celebración. Nuestra experiencia en bodas realizadas en la campiña tarijeña y otros escenarios especiales nos permite transformar cada historia de amor en una experiencia memorable, armoniosa y llena de emoción.</p>
+      <span class="kicker" data-i18n="ev_w_kicker">01 · Bodas</span>
+      <h3 data-i18n="ev_w_h3">Bodas</h3>
+      <p data-i18n="ev_w_p">Creamos bodas únicas, elegantes y profundamente personales. Acompañamos a cada pareja desde la primera idea hasta el gran día, cuidando la planificación, el diseño, los proveedores, la logística y cada detalle de la celebración. Nuestra experiencia en bodas realizadas en la campiña tarijeña y otros escenarios especiales nos permite transformar cada historia de amor en una experiencia memorable, armoniosa y llena de emoción.</p>
     </div>
     <div class="carousel reveal d1" data-carousel>
       <div class="car-track">
@@ -71,15 +77,15 @@
   <!-- EVENTOS CORPORATIVOS -->
   <div class="ev-cat">
     <div class="ev-cat-head reveal">
-      <span class="kicker">02 · Corporativos</span>
-      <h3>Eventos Corporativos</h3>
-      <p>Diseñamos y organizamos eventos corporativos que comunican, conectan y fortalecen la identidad de cada empresa o institución. Trabajamos de manera profesional y estratégica para que cada encuentro transmita su mensaje y genere una experiencia positiva para todos los invitados.</p>
+      <span class="kicker" data-i18n="ev_c_kicker">02 · Corporativos</span>
+      <h3 data-i18n="ev_c_h3">Eventos Corporativos</h3>
+      <p data-i18n="ev_c_p">Diseñamos y organizamos eventos corporativos que comunican, conectan y fortalecen la identidad de cada empresa o institución. Trabajamos de manera profesional y estratégica para que cada encuentro transmita su mensaje y genere una experiencia positiva para todos los invitados.</p>
     </div>
     <div class="carousel reveal d1" data-carousel>
       <div class="car-track">
-        <div class="car-slide"><img src="imagenes/img16.jpeg" alt="Evento corporativo organizado por Nicole Márquez" loading="lazy"></div>
-        <div class="car-slide"><img src="imagenes/img17.jpeg" alt="Cena institucional" loading="lazy"></div>
-        <div class="car-slide"><img src="imagenes/img19.jpeg" alt="Encuentro empresarial" loading="lazy"></div>
+        <div class="car-slide"><img src="imagenes/img31.jpeg" alt="Evento corporativo organizado por Nicole Márquez" loading="lazy"></div>
+        <div class="car-slide"><img src="imagenes/img25.jpeg" alt="Cena institucional" loading="lazy"></div>
+        <div class="car-slide"><img src="imagenes/img28.jpeg" alt="Encuentro empresarial" loading="lazy"></div>
       </div>
       <button class="car-btn prev" type="button" aria-label="Imagen anterior">‹</button>
       <button class="car-btn next" type="button" aria-label="Imagen siguiente">›</button>
@@ -90,16 +96,15 @@
   <!-- EVENTOS SOCIALES -->
   <div class="ev-cat">
     <div class="ev-cat-head reveal">
-      <span class="kicker">03 · Sociales</span>
-      <h3>Eventos Sociales</h3>
-      <p>Creamos celebraciones únicas para compartir los momentos más importantes de la vida. Organizamos cumpleaños, aniversarios, bautizos, graduaciones y otras ocasiones especiales, desarrollando propuestas personalizadas que reflejan el estilo y la esencia de cada cliente.</p>
+      <span class="kicker" data-i18n="ev_s_kicker">03 · Sociales</span>
+      <h3 data-i18n="ev_s_h3">Eventos Sociales</h3>
+      <p data-i18n="ev_s_p">Creamos celebraciones únicas para compartir los momentos más importantes de la vida. Organizamos cumpleaños, aniversarios, bautizos, graduaciones y otras ocasiones especiales, desarrollando propuestas personalizadas que reflejan el estilo y la esencia de cada cliente.</p>
     </div>
     <div class="carousel reveal d1" data-carousel>
       <div class="car-track">
         <div class="car-slide"><img src="imagenes/img22.jpeg" alt="Evento social organizado por Nicole Márquez" loading="lazy"></div>
-        <div class="car-slide"><img src="imagenes/img2.jpeg" alt="Celebración social elegante" loading="lazy"></div>
-        <div class="car-slide"><img src="imagenes/img5.jpeg" alt="Fiesta de aniversario" loading="lazy"></div>
-        <div class="car-slide"><img src="imagenes/img14.jpeg" alt="Ambientación de evento social" loading="lazy"></div>
+        <div class="car-slide"><img src="imagenes/img24.jpeg" alt="Celebración social elegante" loading="lazy"></div>
+        <div class="car-slide"><img src="imagenes/img20.jpeg" alt="Fiesta de aniversario" loading="lazy"></div>
       </div>
       <button class="car-btn prev" type="button" aria-label="Imagen anterior">‹</button>
       <button class="car-btn next" type="button" aria-label="Imagen siguiente">›</button>
@@ -112,8 +117,8 @@
 <!-- TESTIMONIOS -->
 <section class="section" style="background:var(--cream)">
   <div class="wrap center">
-    <span class="kicker reveal">Lo que dicen nuestras parejas</span>
-    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)">Testimonios</h2>
+    <span class="kicker reveal" data-i18n="ev_testi_kicker">Lo que dicen nuestras parejas</span>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,5vw,3.2rem);color:var(--gold-deep)" data-i18n="ev_testi_h2">Testimonios</h2>
     <div class="ornament reveal d1"><span></span><i></i><span></span></div>
   </div>
   <div class="wrap">
@@ -121,16 +126,16 @@
       <div class="testi-photo reveal"></div>
       <div class="testi-list">
         <blockquote class="testi-card reveal d1">
-          <p>«Nos sentimos acompañados en todo momento. Nicole cuidó cada detalle y nos permitió disfrutar nuestra boda con total tranquilidad.»</p>
-          <cite>— Pareja de novios</cite>
+          <p data-i18n="testi1">«Nos sentimos acompañados en todo momento. Nicole cuidó cada detalle y nos permitió disfrutar nuestra boda con total tranquilidad.»</p>
+          <cite data-i18n="testi_cite">— Pareja de novios</cite>
         </blockquote>
         <blockquote class="testi-card reveal d2">
-          <p>«Nos encantó cómo entendió nuestra idea y la transformó en una celebración elegante, cálida y llena de personalidad.»</p>
-          <cite>— Pareja de novios</cite>
+          <p data-i18n="testi2">«Nos encantó cómo entendió nuestra idea y la transformó en una celebración elegante, cálida y llena de personalidad.»</p>
+          <cite data-i18n="testi_cite">— Pareja de novios</cite>
         </blockquote>
         <blockquote class="testi-card reveal d3">
-          <p>«Más que una organizadora, fue una gran aliada durante todo el proceso. Nos dio seguridad, orden y mucha tranquilidad.»</p>
-          <cite>— Pareja de novios</cite>
+          <p data-i18n="testi3">«Más que una organizadora, fue una gran aliada durante todo el proceso. Nos dio seguridad, orden y mucha tranquilidad.»</p>
+          <cite data-i18n="testi_cite">— Pareja de novios</cite>
         </blockquote>
       </div>
     </div>
@@ -139,10 +144,10 @@
 
 <!-- CTA -->
 <section class="section cta">
-  <span class="kicker reveal">Tu celebración empieza aquí</span>
-  <h2 class="reveal d1">¿Qué evento tienes en mente?</h2>
-  <p class="reveal d1">Cuéntanos tu idea y la convertiremos en una experiencia única, elegante y memorable.</p>
-  <a href="contacto.html" class="btn btn-dark reveal d1">Conversemos sobre tu evento</a>
+  <span class="kicker reveal" data-i18n="ev_cta_kicker">Tu celebración empieza aquí</span>
+  <h2 class="reveal d1" data-i18n="ev_cta_h2">¿Qué evento tienes en mente?</h2>
+  <p class="reveal d1" data-i18n="ev_cta_p">Cuéntanos tu idea y la convertiremos en una experiencia única, elegante y memorable.</p>
+  <a href="contacto.html" class="btn btn-dark reveal d1" data-i18n="cta_talk_btn">Conversemos sobre tu evento</a>
 </section>
 
 <!-- FOOTER -->
@@ -151,7 +156,7 @@
     <div>
       <img src="logo.png" alt="Nicole Márquez - Organización de Eventos" width="200"/>
       <small class="tag">Tarija · Bolivia</small>
-      <p>Diseñamos y producimos experiencias únicas, elegantes y cuidadosamente planificadas: bodas, eventos sociales y corporativos en Tarija y otros destinos.</p>
+      <p data-i18n="foot_desc">Diseñamos y producimos experiencias únicas, elegantes y cuidadosamente planificadas: bodas, eventos sociales y corporativos en Tarija y otros destinos.</p>
       <div class="socials">
         <a href="https://www.instagram.com/nicolem.wp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://www.facebook.com/profile.php?id=100064047130136" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V12H8v3h2.5v6h3v-6H16l.5-3h-3v-2.2c0-.5.4-.8.9-.8z"/></svg></a>
@@ -160,17 +165,17 @@
       </div>
     </div>
     <div>
-      <h5>Navegación</h5>
+      <h5 data-i18n="foot_nav_title">Navegación</h5>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="organizadora.html">La Organizadora</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="areas.html">Áreas de Trabajo</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="organizadora.html" data-i18n="nav_org">La Organizadora</a></li>
+        <li><a href="eventos.html" data-i18n="nav_events">Eventos</a></li>
+        <li><a href="areas.html" data-i18n="nav_areas">Áreas de Trabajo</a></li>
+        <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contacto</h5>
+      <h5 data-i18n="foot_contact_title">Contacto</h5>
       <ul>
         <li>Av. La Paz · Zona Salamanca, Tarija</li>
         <li><a href="tel:+59167393012">+591 673 93 012</a></li>
@@ -179,11 +184,12 @@
     </div>
   </div>
   <div class="footer-base">
-    <span>© 2026 Nicole Márquez · Organización de Eventos. Tarija, Bolivia.</span>
-    <span>Hecho por ProgredI.</span>
+    <span data-i18n="foot_copyright">© 2026 Nicole Márquez · Organización de Eventos. Tarija, Bolivia.</span>
+    <span data-i18n="foot_made">Hecho por BuckdI.</span>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

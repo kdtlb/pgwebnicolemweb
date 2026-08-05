@@ -1,53 +1,38 @@
 /* VENDIMIA · Casa de Eventos — interacciones compartidas */
 
-/* =========================================================
-   TEMPORAL · Selector de tono de verde (vista previa cliente)
-   Para quitarlo: eliminar este bloque + el bloque en styles.css
-   ========================================================= */
-(function(){
-  const PALETTES = [
-    { id:'',   name:'Verde actual', color:'#1e4d39' },
-    { id:'p1', name:'Olivo oscuro', color:'#272b00' },
-    { id:'p2', name:'Olivo',        color:'#54582f' },
-    { id:'p3', name:'Salvia',       color:'#86895d' }
-  ];
-  const saved = localStorage.getItem('nm-palette') || '';
-  if (saved) document.documentElement.setAttribute('data-palette', saved);
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const panel = document.createElement('div');
-    panel.className = 'palette-switch';
-    const title = document.createElement('span');
-    title.className = 'ps-title';
-    title.textContent = 'Tono de verde · vista previa';
-    const row = document.createElement('div');
-    row.className = 'ps-row';
-
-    PALETTES.forEach(p => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'ps-dot';
-      b.style.background = p.color;
-      b.title = p.name;
-      b.setAttribute('aria-label', 'Tono ' + p.name);
-      if ((saved || '') === p.id) b.classList.add('active');
-      b.addEventListener('click', () => {
-        if (p.id) document.documentElement.setAttribute('data-palette', p.id);
-        else document.documentElement.removeAttribute('data-palette');
-        localStorage.setItem('nm-palette', p.id);
-        row.querySelectorAll('.ps-dot').forEach(d => d.classList.remove('active'));
-        b.classList.add('active');
-      });
-      row.appendChild(b);
-    });
-
-    panel.appendChild(title);
-    panel.appendChild(row);
-    document.body.appendChild(panel);
-  });
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* --- Botón flotante de WhatsApp (presente en todas las páginas) --- */
+  (() => {
+    if (document.querySelector('.wa-float')) return;
+    const WA_NUMBER = '59167393012';
+    const t = (window.NM_I18N && window.NM_I18N.t) ? window.NM_I18N.t : () => '';
+
+    const wa = document.createElement('a');
+    wa.className = 'wa-float';
+    wa.target = '_blank';
+    wa.rel = 'noopener';
+    wa.setAttribute('data-i18n-aria', 'wa_aria');
+    wa.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+      '<path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.1.1.6-.2 1.3z"/></svg>';
+
+    const refresh = () => {
+      const msg = t('wa_text');
+      wa.href = 'https://wa.me/' + WA_NUMBER + (msg ? '?text=' + encodeURIComponent(msg) : '');
+      const aria = t('wa_aria');
+      if (aria) wa.setAttribute('aria-label', aria);
+    };
+    refresh();
+    document.body.appendChild(wa);
+
+    // Mantiene el mensaje e idioma sincronizados al cambiar de idioma.
+    // (El manejador de idioma de i18n.js se registra antes, así que al
+    //  ejecutarse este ya se aplicó el nuevo idioma.)
+    document.querySelectorAll('.lang-switch [data-lang]').forEach((b) =>
+      b.addEventListener('click', refresh)
+    );
+  })();
 
   /* --- Fondo del nav al hacer scroll --- */
   const nav = document.querySelector('.nav');

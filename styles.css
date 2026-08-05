@@ -4,16 +4,16 @@
    Estética: evento de lujo · paleta cálida (vino, terracota, oro)
    ========================================================= */
 
-/* ---------- Tipografías ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Marcellus&family=Jost:wght@300;400;500;600&display=swap');
+/* ---------- Tipografías (autoalojadas · sin depender de Google) ---------- */
+@import url('fonts/fonts.css');
 
 /* ---------- Variables ---------- */
 :root{
-  --wine:        #1e4d39;
-  --wine-deep:   #0f2a1e;
-  --wine-soft:   #2a6149;
+  --wine:        #54582f;
+  --wine-deep:   #272b00;
+  --wine-soft:   #6d7040;
   --terracotta:  #a8842f;
-  --clay:        #4f8f6b;
+  --clay:        #86895d;
   --gold:        #c9a24b;
   --gold-light:  #e6cd8c;
   --gold-deep:   #a8842f;
@@ -125,6 +125,21 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 .burger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .burger.open span:nth-child(2){ opacity:0; }
 .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+/* ---------- Selector de idioma ---------- */
+.lang-switch{
+  display:flex; align-items:center; gap:.15rem; z-index:1100;
+  font-family:var(--font-accent); margin-left:1.6rem;
+}
+.lang-switch button{
+  background:none; border:0; cursor:pointer; padding:.28rem .42rem;
+  color:var(--ivory); opacity:.62; font-family:inherit;
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+  line-height:1; border-radius:3px; transition:.25s var(--ease);
+}
+.lang-switch button + button{ border-left:1px solid rgba(230,205,140,.32); border-radius:0; }
+.lang-switch button:hover{ opacity:1; color:var(--gold-light); }
+.lang-switch button.active{ opacity:1; color:var(--gold-light); font-weight:600; }
 
 /* ---------- HERO genérico (subpáginas) ---------- */
 .page-hero{
@@ -520,18 +535,58 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
   .stats{ grid-template-columns:repeat(2,1fr); }
   .footer-grid{ grid-template-columns:1fr; gap:2rem; }
 }
+@media(max-width:900px){
+  .lang-switch{ margin-left:auto; margin-right:.8rem; }
+}
 @media(max-width:560px){
   .stats{ grid-template-columns:1fr 1fr; }
   .hero-actions{ flex-direction:column; align-items:flex-start; }
   .btn{ width:100%; justify-content:center; }
   .contact-grid{ grid-template-columns:1fr; }
   .hours-bar{ gap:1.4rem; }
+  .lang-switch{ gap:0; margin-left:auto; margin-right:.6rem; }
+  .lang-switch button{ padding:.26rem .3rem; font-size:.64rem; letter-spacing:.08em; }
 }
 
 .brand img {
   max-height: 50px; /* Adjust this value to fit your navigation bar */
   width: auto;
   display: block;
+}
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.wa-float{
+  position:fixed; z-index:900;
+  right:clamp(1rem,3vw,2.2rem); bottom:clamp(1rem,3vw,2.2rem);
+  width:56px; height:56px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--wine-deep); color:var(--gold-light);
+  border:1px solid rgba(201,162,75,.5);
+  box-shadow:0 12px 30px -10px rgba(0,0,0,.55);
+  transition:transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease), box-shadow .35s var(--ease);
+}
+.wa-float svg{ width:28px; height:28px; }
+.wa-float::before{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:1px solid rgba(201,162,75,.35);
+  animation:wa-pulse 3.4s var(--ease) infinite;
+}
+.wa-float:hover{
+  background:var(--gold); color:var(--wine-deep);
+  transform:translateY(-3px) scale(1.06);
+  box-shadow:0 16px 36px -10px rgba(0,0,0,.6);
+}
+@keyframes wa-pulse{
+  0%{ transform:scale(1); opacity:.7; }
+  70%{ transform:scale(1.45); opacity:0; }
+  100%{ transform:scale(1.45); opacity:0; }
+}
+@media(prefers-reduced-motion:reduce){
+  .wa-float::before{ animation:none; }
+}
+@media(max-width:560px){
+  .wa-float{ width:50px; height:50px; }
+  .wa-float svg{ width:25px; height:25px; }
 }
 
 /* =========================================================
@@ -581,10 +636,12 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 .ev-cat-head p{ color:var(--ink-soft); margin-top:1rem; }
 
 /* Carrusel */
-.carousel{ position:relative; overflow:hidden; box-shadow:var(--shadow-card); }
+.carousel{ position:relative; overflow:hidden; box-shadow:var(--shadow-card); max-width:640px; margin-inline:auto; }
 .car-track{ display:flex; transition:transform .6s var(--ease); }
 .car-slide{ min-width:100%; }
-.car-slide img{ width:100%; height:clamp(380px,60vw,720px); object-fit:cover; }
+/* Caja cuadrada (1:1) porque la mayoría de las fotos son cuadradas:
+   así se ven completas, sin recortes, y la caja queda más angosta y alta. */
+.car-slide img{ width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; display:block; }
 .car-btn{ position:absolute; top:50%; transform:translateY(-50%); z-index:3;
   width:48px; height:48px; border:1px solid rgba(230,205,140,.6); background:rgba(16,40,29,.55);
   color:var(--gold-light); font-size:1.6rem; line-height:1; cursor:pointer;
@@ -600,7 +657,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 /* Testimonios */
 .testi-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,5vw,4rem);
   align-items:center; margin-top:3rem; }
-.testi-photo{ aspect-ratio:3/4; background:url("imagenes/img20.jpeg") center/cover;
+.testi-photo{ aspect-ratio:3/4; background:url("imagenes/img29.jpeg") center/cover;
   box-shadow:var(--shadow-card); position:relative; }
 .testi-photo::before{ content:""; position:absolute; inset:14px; border:1px solid rgba(230,205,140,.4); }
 .testi-list{ display:flex; flex-direction:column; gap:1.4rem; }
@@ -612,44 +669,4 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 @media(max-width:900px){
   .svc-grid,.team-grid,.testi-grid{ grid-template-columns:1fr; }
   .testi-photo{ aspect-ratio:16/10; }
-}
-
-/* =========================================================
-   TEMPORAL · Selector de tono de verde (vista previa cliente)
-   Para quitarlo: eliminar este bloque + el bloque en main.js
-   ========================================================= */
-/* Opción 1 · Olivo oscuro (#272b00) */
-:root[data-palette="p1"]{
-  --wine:#272b00; --wine-deep:#171a00; --wine-soft:#3d411c; --clay:#54582f;
-}
-/* Opción 2 · Olivo (#54582f) — paleta de la imagen */
-:root[data-palette="p2"]{
-  --wine:#54582f; --wine-deep:#272b00; --wine-soft:#6d7040; --clay:#86895d;
-}
-/* Opción 3 · Salvia (#86895d) */
-:root[data-palette="p3"]{
-  --wine:#6d7040; --wine-deep:#3d411c; --wine-soft:#86895d; --clay:#9ea074;
-}
-
-.palette-switch{
-  position:fixed; left:1rem; bottom:1rem; z-index:2000;
-  background:rgba(253,248,239,.96); border:1px solid var(--gold);
-  padding:.7rem .8rem; box-shadow:var(--shadow-card); backdrop-filter:blur(6px);
-  font-family:var(--font-accent);
-}
-.palette-switch .ps-title{
-  display:block; font-size:.58rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--gold-deep); margin-bottom:.5rem;
-}
-.palette-switch .ps-row{ display:flex; gap:.5rem; }
-.palette-switch .ps-dot{
-  width:26px; height:26px; border-radius:50%; cursor:pointer;
-  border:2px solid transparent; padding:0; transition:.25s var(--ease);
-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);
-}
-.palette-switch .ps-dot:hover{ transform:scale(1.12); }
-.palette-switch .ps-dot.active{ border-color:var(--gold-deep); transform:scale(1.12); }
-@media(max-width:560px){
-  .palette-switch{ left:.6rem; bottom:.6rem; padding:.55rem .6rem; }
-  .palette-switch .ps-dot{ width:22px; height:22px; }
 }
